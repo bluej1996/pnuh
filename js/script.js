@@ -159,8 +159,6 @@ $(document).ready(function () {
 
     // 닫기 버튼 클릭 처리
     site_search_bt.click(function (event) {
-        // form의 버튼을 클릭하면 갱신
-        // 막아준다.
         event.preventDefault();
         // 닫기 버튼을 숨긴다.        
         setTimeout(function () {
@@ -389,36 +387,15 @@ $(document).ready(function () {
         let title = temp_arr[4].trim();
 
         // 실제 html 로 사용할 글자를 만든다.
-        let temp_html = '<div class="health-box">';
-
-        // a 태그를 생성한다.
-        temp_html = temp_html + '<a href=';
-        temp_html = temp_html + link;
-        temp_html = temp_html + ' ';
-        temp_html = temp_html + 'alt=';
-        temp_html = temp_html + alt;
-        temp_html = temp_html + '>';
-
-        // 이미지가 들어간다.
-        temp_html = temp_html + '<span class="health-img">';
-        temp_html = temp_html + '<img src=';
-        temp_html = temp_html + img;
-        temp_html = temp_html + '>';
-        temp_html = temp_html + '</span>';
-
-        // 카테고리 출력
-        temp_html = temp_html + '<span class="health-cate">';
-        temp_html = temp_html + cate;
-        temp_html = temp_html + '</span>'
-
-        // 타이틀 출력
-        temp_html = temp_html + '<span class="health-tit">';
-        temp_html = temp_html + title;
-        temp_html = temp_html + '</span>';
-
-        temp_html = temp_html + '</a>'
-        temp_html = temp_html + '</div>';
-
+        let temp_html = `
+            <div class="health-box" data-aos="fade-up" data-aos-duration="800">
+                <a href="${link}" alt="${alt}">
+                    <span class="health-img"><img src="${img}"></span>
+                    <span class="health-cate">${cate}</span>
+                    <span class="health-tit">${title}</span>
+                </a>
+            </div>
+        `;
         return temp_html;
     }
 
@@ -446,7 +423,9 @@ $(document).ready(function () {
 
 //모든 리소스 로딩 완료
 window.onload = function () {
-
+    AOS.init({
+        once:true
+    });
     // 퀵링크 슬라이드
     let sw_quick = new Swiper('.sw-quick', {
         loop: true,

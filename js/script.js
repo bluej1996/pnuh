@@ -1,19 +1,21 @@
 $(document).ready(function () {
 
     let modal_close = $('.modal-close');
+    let modal_close_2 = $('.modal-close-2');
     let modal = $('.modal');
+    let modal_review = $('.modal-review');
+    let modal_review_bt = $('.modal-review-bt');
 
     modal_close.click(function(){
         modal.hide();
     });
-
-    let modal_bt = $('.modal-bt');
-    modal_bt.click(function(){
-        modal.show();
+    modal_close_2.click(function(){
+        modal.hide();
     });
-
-});
-$(document).ready(function () {
+    modal_review_bt.click(function(){
+        modal_review.show();
+    });
+    
     // 배너
     let quick_banner = $('.quick-banner');
     let quick_day_close = $('.quick-day-close');

@@ -66,7 +66,10 @@ body {
     border-radius: 10px; 
     font-size: 15px;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 100px;
+}
+.modal-wrap span{
+    font-size: 12px;
 }
 .modal-wrap::before{
     content: '';
@@ -78,7 +81,7 @@ body {
     width: 50px;
     height: 50px;
     background: url('../images/modal_img.png') no-repeat center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .modal-close {
     position: relative;
@@ -93,8 +96,57 @@ body {
     text-transform: uppercase;
     margin-top: 10px;
 }
+.modal-close-2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: block;
+    padding: 7px 30px;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.modal-review{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px; 
+    font-size: 15px;
+    text-align: center;
+    padding-top: 30px;
+}
+.modal-review-bt {
+    position: relative;
+    display: inline-block;
 
-.modal-bt {
+    padding: 7px 30px;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.modal-review span{
+    position: relative;;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+}
+.modal-review p {
+    font-size: 14px;
+    line-height: 20px;
 }
 /* 공통요소 */
 .clearfix::after {
